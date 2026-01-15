@@ -25,6 +25,7 @@
    "search_index": 1
   },
   {
+   "depends_on": "type",
    "fieldname": "type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -49,6 +50,7 @@
   {
    "fieldname": "from_warehouse",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "From",
    "options": "Warehouse"
   },
@@ -63,7 +65,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-09 16:45:06.334083",
+ "modified": "2026-01-14 17:55:00.902716",
  "modified_by": "Administrator",
  "module": "Inventory Management",
  "name": "Stock Entry",

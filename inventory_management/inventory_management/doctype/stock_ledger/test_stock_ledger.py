@@ -1,7 +1,7 @@
 # Copyright (c) 2026, Shrihari Mahabal and Contributors
 # See license.txt
 
-# import frappe
+import frappe
 from frappe.tests import IntegrationTestCase
 
 
@@ -19,4 +19,19 @@ class IntegrationTestStockLedger(IntegrationTestCase):
 	Use this class for testing interactions between multiple components.
 	"""
 
-	pass
+	def test_stock_ledger_manual_insert(self):
+		with self.assertRaises(frappe.ValidationError):
+			frappe.get_doc(doctype="Stock Ledger", item="TV", warehouse="LSR1 Shelf 1", qty_change=2).insert()
+
+	def test_stock_ledger_immutability(self):
+		ledger_entry_list = frappe.get_all("Stock Ledger", limit=1)
+		if not ledger_entry_list:
+			self.skipTest("No ledger entries to update/delete")
+		
+		sle = frappe.get_doc("Stock Ledger", ledger_entry_list[0].name)
+
+		with self.assertRaises(frappe.ValidationError):
+			sle.save()
+
+		with self.assertRaises(frappe.ValidationError):
+			sle.delete()

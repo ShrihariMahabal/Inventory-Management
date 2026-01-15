@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "ITM#####",
+ "autoname": "ITM.#####",
  "creation": "2026-01-07 17:05:39.238460",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -27,7 +27,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-12 09:26:43.070094",
+ "modified": "2026-01-14 11:59:41.538591",
  "modified_by": "Administrator",
  "module": "Inventory Management",
  "name": "Item",
