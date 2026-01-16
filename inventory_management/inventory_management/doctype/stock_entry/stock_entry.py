@@ -15,8 +15,6 @@ class StockEntry(Document):
 
         if self.type == "Transfer" and self.from_warehouse == self.to_warehouse:
             frappe.throw("From and To Warehouse cannot be same")
-        if len(self.entry_items) == 0:
-            frappe.throw("Stock Entry Items can't be empty")
         if self.type == "Consume" or self.type == "Transfer":
             for entry_item in self.entry_items:
                 item_name = entry_item.item_name
